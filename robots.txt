@@ -1,1 +1,1 @@
-Sitemap: http://pixyll.com/sitemap.xml
+Sitemap: http://pixyll.com/pixyll/sitemap.xml
