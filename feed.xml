@@ -114,7 +114,7 @@ bundle install
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;For existing Pixyll users, you’ll also need to remove the body of the page below the preamble.&lt;/p&gt;
+  &lt;p&gt;For existing Pixyll users, you’ll also need to remove the body of the page below the preamble.b&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;6-rename-your-index-file&quot;&gt;6. Rename your index file&lt;/h3&gt;
@@ -248,6 +248,42 @@ git mv css/pixyll.scss assets/css/main.scss
 &lt;p&gt;Then run the Bundler “install” command so Bundler will download the dependency:&lt;/p&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;15-add-a-rakefile-optional&quot;&gt;15. Add a Rakefile (optional)&lt;/h3&gt;
+
+&lt;p&gt;In order to use the &lt;code class=&quot;highlighter-rouge&quot;&gt;Rakefile&lt;/code&gt; that ships with the Pixyll theme and get future fixes and improvements, you should createa &lt;code class=&quot;highlighter-rouge&quot;&gt;Rakefile&lt;/code&gt; at the root directory of your site:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Gem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Specification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;find_by_name&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'pixyll'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;rakefile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;gem_dir&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/Rakefile&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;load&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rakefile&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The rake tasks help you with routine tasks for your Jekyll site.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rake list
+Tasks: draft, post, preview, undraft
+(type rake -T for more detail)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Add a new post:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rake 'post[Hello\, world]'
+Creating new post: _posts/2019-02-08-hello-world.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Add a new draft:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rake 'draft[Hello\, world]'
+Creating new draft: _drafts/hello-world.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Publish a draft:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ rake undraft[hello-world.md]
+Original date of draft: 2019-02-08 04:28
+Moving _drafts/hello-world.md to _posts/2019-02-08-hello-world.md...done.
+Modifying date for post to '2019-02-08 04:29'...done.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;github-pages&quot;&gt;GitHub pages&lt;/h2&gt;

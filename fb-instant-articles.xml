@@ -129,7 +129,7 @@ bundle install
 </code></pre></div></div>
 
 <blockquote>
-  <p>For existing Pixyll users, you’ll also need to remove the body of the page below the preamble.</p>
+  <p>For existing Pixyll users, you’ll also need to remove the body of the page below the preamble.b</p>
 </blockquote>
 
 <h3 id="6-rename-your-index-file">6. Rename your index file</h3>
@@ -263,6 +263,42 @@ git mv css/pixyll.scss assets/css/main.scss
 <p>Then run the Bundler “install” command so Bundler will download the dependency:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle install
+</code></pre></div></div>
+
+<h3 id="15-add-a-rakefile-optional">15. Add a Rakefile (optional)</h3>
+
+<p>In order to use the <code class="highlighter-rouge">Rakefile</code> that ships with the Pixyll theme and get future fixes and improvements, you should createa <code class="highlighter-rouge">Rakefile</code> at the root directory of your site:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">spec</span> <span class="o">=</span> <span class="no">Gem</span><span class="o">::</span><span class="no">Specification</span><span class="p">.</span><span class="nf">find_by_name</span> <span class="s1">'pixyll'</span>
+<span class="n">rakefile</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">spec</span><span class="p">.</span><span class="nf">gem_dir</span><span class="si">}</span><span class="s2">/Rakefile"</span>
+<span class="nb">load</span> <span class="n">rakefile</span>
+</code></pre></div></div>
+
+<p>The rake tasks help you with routine tasks for your Jekyll site.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rake list
+Tasks: draft, post, preview, undraft
+(type rake -T for more detail)
+</code></pre></div></div>
+
+<p>Add a new post:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rake 'post[Hello\, world]'
+Creating new post: _posts/2019-02-08-hello-world.md
+</code></pre></div></div>
+
+<p>Add a new draft:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rake 'draft[Hello\, world]'
+Creating new draft: _drafts/hello-world.md
+</code></pre></div></div>
+
+<p>Publish a draft:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rake undraft[hello-world.md]
+Original date of draft: 2019-02-08 04:28
+Moving _drafts/hello-world.md to _posts/2019-02-08-hello-world.md...done.
+Modifying date for post to '2019-02-08 04:29'...done.
 </code></pre></div></div>
 
 <h2 id="github-pages">GitHub pages</h2>
