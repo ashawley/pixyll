@@ -1,10 +1,10 @@
-var CACHE_NAME = "pixyll2-20190210093434";
+var CACHE_NAME = "pixyll2-20190210105530";
 
 self.addEventListener("install", function(e) {
   e.waitUntil(
     caches.open(CACHE_NAME).then(function(cache) {
       return cache.addAll([
-        "/pixyll/css/pixyll.css?201902100934",
+        "/pixyll/css/pixyll.css?201902101055",
         "/pixyll/"
       ]);
     })
@@ -29,7 +29,7 @@ self.addEventListener("activate", function(e) {
 addEventListener("fetch", function(e) {
   e.respondWith(
     caches.match(e.request.url).then(function(response) {
-        return response || fetch(e.request.url).then(function(response) {
+        return response || fetch(e.request.url, { mode: "cors" }).then(function(response) {
         var hosts = [
           "https://fonts.googleapis.com",
           "https://maxcdn.bootstrapcdn.com",
