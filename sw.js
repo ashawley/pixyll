@@ -1,10 +1,10 @@
-var CACHE_NAME = "pixyll2-20190210110927";
+var CACHE_NAME = "pixyll2-20190210112107";
 
 self.addEventListener("install", function(e) {
   e.waitUntil(
     caches.open(CACHE_NAME).then(function(cache) {
       return cache.addAll([
-        "/pixyll/css/pixyll.css?201902101109",
+        "/pixyll/css/pixyll.css?201902101121",
         "/pixyll/"
       ]);
     })
@@ -38,7 +38,7 @@ addEventListener("fetch", function(e) {
         hosts.map(function(host) {
           if (e.request.url.indexOf(host) === 0) {
             caches.open(CACHE_NAME).then(function(cache) {
-              cache.put(e.request, response.clone());
+              cache.put(e.request, response);
             });
           }
         });
