@@ -1,1 +1,1 @@
-Sitemap: http://pixyll.com/pixyll/sitemap.xml
+Sitemap: https://ashawley.github.io/pixyll/sitemap.xml
