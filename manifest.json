@@ -1,10 +1,10 @@
 {
   "short_name": "Pixyll",
-  "name": "https://ashawley.github.io",
+  "name": "Pixyll",
   "description": "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff.",
   "icons": [
     {
-      "src": "/pixyll/assets/img/splash-512x512.png",
+      "src": "/pixyll/splash-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     },
@@ -14,7 +14,7 @@
       "sizes": "192x192"
     }
   ],
-  "start_url": "https://ashawley.github.io/pixyll/",
+  "start_url": "/pixyll/",
   "background_color": "#ffffff",
   "display": "standalone",
   "scope": "/pixyll/",
