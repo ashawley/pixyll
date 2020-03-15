@@ -9,7 +9,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/pixyll/",
+  "start_url": "https://ashawley.github.io/pixyll/",
   "background_color": "#ffffff",
   "display": "standalone",
   "scope": "/pixyll/",
