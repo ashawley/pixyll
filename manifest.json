@@ -6,7 +6,7 @@
     {
       "src": "/pixyll/assets/img/favicon-192x192.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "192x192"
     }
   ],
   "start_url": "https://ashawley.github.io/pixyll/",
