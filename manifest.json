@@ -4,7 +4,7 @@
   "description": "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff.",
   "icons": [
     {
-      "src": "/favicon-192x192.png",
+      "src": "/pixyll/assets/img/favicon-192x192.png",
       "type": "image/png",
       "sizes": "512x512"
     }
