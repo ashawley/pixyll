@@ -185,6 +185,14 @@ Pixyll supports these features because it provides a Javascript file that acts a
 2. A `favicon-192x192.png` for the app icon (if you haven't already).
 3. In `sw.js`, list any other files or pages you want to add to the list of cached artifacts.
 
+By default, the service worker is disabled:  For some browsers, the service worker can cause problems when authoring the site and viewing the site locally.  When you publish the site, enable the service worker with the following setting in `_config.yml`:
+
+```yaml
+service_worker: true
+```
+
+If you want to browse your site running locally from Chrome with the service worker enabled, you should enable "Update on reload" for **Service Workers** from the **Application** tab of the **Developor Tools**.
+
 For more information on PWAs:
 
 - https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps

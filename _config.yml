@@ -30,6 +30,9 @@ extended_fonts: false
 enable_anchorjs: false
 # Preview image for social media aka og:image and twitter:image
 post_preview_image: false
+# Offline support as a Progressive Web App
+# Enable when publishing, but disable when working locally.
+service_worker: false
 
 # Facebook Page integration
 # (for instant articles and other stuff)
